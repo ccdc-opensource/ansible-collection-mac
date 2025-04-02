@@ -1,0 +1,20 @@
+---
+namespace: ccdc
+name: mac
+version: 1.0.0
+readme: README.md
+
+authors:
+- layfield-ccdc
+
+description: Collection of CCDC mac roles
+
+license:
+- MIT
+
+repository: https://github.com/ccdc-opensource/ansible-collection-mac
+documentation: https://github.com/ccdc-opensource/ansible-collection-mac
+
+dependencies: {}
+build_ignore: []
+
