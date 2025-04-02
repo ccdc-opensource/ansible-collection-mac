@@ -1,0 +1,15 @@
+---
+- name: stop mac from sleeping
+  ansible.builtin.include_tasks: never-sleep.yml
+
+- name: stop automatic updates, we decide when
+  ansible.builtin.include_tasks: disable-autoupdates.yml
+
+- name: setup desktop defaults that increase speed
+  ansible.builtin.include_tasks: defaults-for-build-machine-speed.yml
+
+- name: disable spotlight searching
+  ansible.builtin.include_tasks: disable-spotlight.yml
+
+- name: clear the dock
+  ansible.builtin.include_tasks: clear-the-dock.yml
