@@ -5,16 +5,15 @@ version: 1.0.0
 readme: README.md
 
 authors:
-- layfield-ccdc
+  - layfield-ccdc
 
 description: Collection of CCDC mac roles
 
 license:
-- MIT
+  - MIT
 
 repository: https://github.com/ccdc-opensource/ansible-collection-mac
 documentation: https://github.com/ccdc-opensource/ansible-collection-mac
 
 dependencies: {}
 build_ignore: []
-

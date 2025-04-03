@@ -1,5 +1,5 @@
 ---
-- name: Check developer mode # noqa: no-changed-when
+- name: Check developer mode  # noqa: no-changed-when
   ansible.builtin.command: DevToolsSecurity -status
   register: DevToolsSecurity_status
   become: true
