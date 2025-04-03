@@ -4,7 +4,7 @@
   ignore_errors: true  # noqa: ignore-errors
   become: true
 
-- name: kill all spotlight indexers # noqa: no-changed-when
+- name: kill all spotlight indexers  # noqa: no-changed-when
   ansible.builtin.command: killall mds
   ignore_errors: true  # noqa: ignore-errors
   become: true
