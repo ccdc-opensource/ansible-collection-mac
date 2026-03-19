@@ -1,0 +1,33 @@
+---
+dockutil_install: true
+dockitems_remove:
+  - Launchpad
+  - TV
+  - Podcasts
+  - "App Store"
+  - Music
+  - Messages
+  - FaceTime
+  - Calendar
+  - Photos
+  - Reminders
+  - Terminal
+  - Notes
+  - Contacts
+  - Maps
+  - News
+  - Books
+  - "Voice Memos"
+  - Rustdesk
+  - Mail
+  - "iPhone Mirroring"
+  - Games
+  - Phone
+
+dockitems_persist:
+  - name: Terminal
+    path: "/System/Applications/Utilities/Terminal.app"
+  - name: Safari
+    path: "/Applications/Safari.app/"
+  - name: System Settings
+    path: "/System/Applications/System Settings.app"

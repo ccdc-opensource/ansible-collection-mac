@@ -1,0 +1,46 @@
+---
+- name: Reduce transparency effects
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleReduceTransparency
+    type: bool
+    value: true
+    state: present
+
+- name: Reduce motion effects
+  community.general.osx_defaults:
+    domain: com.apple.universalaccess
+    key: reduceMotion
+    type: bool
+    value: true
+    state: present
+
+- name: Disable smooth scrolling animation
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: NSScrollAnimationEnabled
+    type: bool
+    value: false
+    state: present
+
+- name: Disable recent apps in Dock
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: show-recents
+    type: bool
+    value: false
+    state: present
+  register: mac_optimisation_dock_show_recents
+
+- name: Hide desktop widgets
+  community.general.osx_defaults:
+    domain: com.apple.WindowManager
+    key: StandardHideWidgets
+    type: bool
+    value: true
+    state: present
+
+- name: Restart Dock to apply Dock changes
+  ansible.builtin.command: killall Dock
+  when: mac_optimisation_dock_show_recents.changed
+  changed_when: true

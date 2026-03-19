@@ -10,6 +10,3 @@
 
 - name: disable spotlight searching
   ansible.builtin.include_tasks: disable-spotlight.yml
-
-- name: clear the dock
-  ansible.builtin.include_tasks: clear-the-dock.yml
