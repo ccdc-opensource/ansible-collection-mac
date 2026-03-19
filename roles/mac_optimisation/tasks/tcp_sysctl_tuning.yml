@@ -1,0 +1,29 @@
+---
+- name: Install LaunchDaemon to enforce tcp sysctl settings at boot
+  ansible.builtin.copy:
+    src: com.ccdc.mac_optimisation.sysctl.plist
+    dest: /Library/LaunchDaemons/com.ccdc.mac_optimisation.sysctl.plist
+    owner: root
+    group: wheel
+    mode: "0644"
+  become: true
+  register: mac_optimisation_sysctl_plist
+
+- name: Check if sysctl LaunchDaemon is already loaded
+  ansible.builtin.command: launchctl print system/com.ccdc.mac_optimisation.sysctl
+  register: mac_optimisation_sysctl_job
+  changed_when: false
+  failed_when: false
+  become: true
+
+- name: Bootstrap sysctl LaunchDaemon
+  ansible.builtin.command: launchctl bootstrap system /Library/LaunchDaemons/com.ccdc.mac_optimisation.sysctl.plist
+  when: mac_optimisation_sysctl_job.rc != 0
+  become: true
+
+- name: Restart sysctl LaunchDaemon when plist changes
+  ansible.builtin.command: launchctl kickstart -k system/com.ccdc.mac_optimisation.sysctl
+  when:
+    - mac_optimisation_sysctl_job.rc == 0
+    - mac_optimisation_sysctl_plist.changed
+  become: true

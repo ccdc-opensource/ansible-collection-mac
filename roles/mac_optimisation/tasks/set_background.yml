@@ -1,0 +1,13 @@
+---
+- name: Read current desktop picture path
+  ansible.builtin.command: >-
+    osascript -e 'tell application "System Events" to get POSIX path of (picture of current desktop as alias)'
+  register: mac_optimisation_current_background
+  changed_when: false
+  failed_when: false
+
+- name: Set desktop background for all desktops
+  ansible.builtin.command: >-
+    osascript -e 'tell application "System Events" to tell every desktop to set picture to POSIX file "{{ mac_optimisation_background_image_path }}"'
+  when: mac_optimisation_current_background.rc != 0 or mac_optimisation_current_background.stdout | trim != mac_optimisation_background_image_path
+  changed_when: true

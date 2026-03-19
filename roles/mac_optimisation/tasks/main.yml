@@ -1,0 +1,15 @@
+---
+- name: Apply TCP sysctl tuning
+  ansible.builtin.include_tasks: tcp_sysctl_tuning.yml
+
+- name: Disable Siri suggestions and analytics
+  ansible.builtin.include_tasks: disable_siri_suggestions_and_analytics.yml
+
+- name: Apply UI performance tweaks
+  ansible.builtin.include_tasks: ui_performance_tweaks.yml
+
+- name: Apply UI input tweaks
+  ansible.builtin.include_tasks: ui_input_tweaks.yml
+
+- name: Set desktop background
+  ansible.builtin.include_tasks: set_background.yml

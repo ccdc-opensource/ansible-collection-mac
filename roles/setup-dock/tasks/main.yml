@@ -1,4 +1,0 @@
----
-- name: Setup dock for better developer experience
-  ansible.builtin.include_role:
-    name: geerlingguy.mac.dock
