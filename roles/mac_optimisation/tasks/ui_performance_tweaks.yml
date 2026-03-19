@@ -32,6 +32,14 @@
     state: present
   register: mac_optimisation_dock_show_recents
 
+- name: Hide desktop widgets
+  community.general.osx_defaults:
+    domain: com.apple.WindowManager
+    key: StandardHideWidgets
+    type: bool
+    value: true
+    state: present
+
 - name: Restart Dock to apply Dock changes
   ansible.builtin.command: killall Dock
   when: mac_optimisation_dock_show_recents.changed
