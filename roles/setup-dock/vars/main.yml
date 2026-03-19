@@ -1,0 +1,29 @@
+---
+dockutil_install: true
+dockitems_remove:
+  - Launchpad
+  - TV
+  - Podcasts
+  - 'App Store'
+  - Music
+  - Messages
+  - FaceTime
+  - Calendar
+  - Photos
+  - Reminders
+  - Notes
+  - Contacts
+  - Maps
+  - News
+  - Books
+  - 'Voice Memos'
+
+dockitems_persist:
+  - name: Terminal
+    path: "/Applications/Utilities/Terminal.app/"
+  - name: Safari
+    path: "/Applications/Safari.app/"
+    pos: 2
+  - name: RustDesk
+    path: "/Applications/RustDesk.app/"
+    pos: 3
