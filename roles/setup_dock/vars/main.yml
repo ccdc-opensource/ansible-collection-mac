@@ -6,7 +6,7 @@ dockitems_remove:
   - TV
   - Finder
   - Podcasts
-  - 'App Store'
+  - "App Store"
   - Music
   - Messages
   - FaceTime
@@ -19,10 +19,10 @@ dockitems_remove:
   - Maps
   - News
   - Books
-  - 'Voice Memos'
+  - "Voice Memos"
   - Rustdesk
   - Mail
-  - 'iPhone Mirroring'
+  - "iPhone Mirroring"
   - Games
   - Phone
 
