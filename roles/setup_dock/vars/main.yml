@@ -1,10 +1,8 @@
 ---
 dockutil_install: true
 dockitems_remove:
-  - Finder
   - Launchpad
   - TV
-  - Finder
   - Podcasts
   - "App Store"
   - Music
