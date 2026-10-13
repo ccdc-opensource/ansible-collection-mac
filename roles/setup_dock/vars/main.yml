@@ -23,6 +23,9 @@ dockitems_remove:
   - "iPhone Mirroring"
   - Games
   - Phone
+  - Keynote
+  - Pages
+  - Numbers
 
 dockitems_persist:
   - name: Terminal
